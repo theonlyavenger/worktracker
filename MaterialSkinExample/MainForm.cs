@@ -10,6 +10,7 @@ namespace MaterialSkinExample
     {
         public MySqlConnection connection;
         string server;
+        int port;
         string database;
         string username;
         string password;
@@ -53,7 +54,13 @@ namespace MaterialSkinExample
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            searchlabel1.Visible = false;
+            searchlabel2.Visible = false;
+            searchlabel3.Visible = false;
+            startTime.Visible = false;
+            endTime.Visible = false;
+            materialListView2.Visible = false;
+
             timer1.Enabled = true;
             timer1.Interval = 1000;
             timer1.Start();
@@ -65,10 +72,10 @@ namespace MaterialSkinExample
                 status.Text = "Fetching existing data (if any) ..";
                 displayData();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                MessageBox.Show("Could not connect to the Database");
+                MessageBox.Show("Could not connect to the Database\n "+ex.Message);
                 this.Close();
             }
             
@@ -76,12 +83,13 @@ namespace MaterialSkinExample
 
         private void initilizeDatabase()
         {
-            server = "localhost";
-            database = "internship";
-            username = "root";
-            password = "";
+            server = "db4free.net";
+            port = 3306;
+            database = "worktracker";
+            username = "manojjahgirdar";
+            password = "password";
 
-            string constr = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + username + ";" + "PASSWORD=" + password + ";";
+            string constr = "SERVER=" + server + ";" +"PORT ="+ port + ";" + "DATABASE=" + database + ";" + "UID=" + username + ";" + "PASSWORD=" + password + ";";
             connection = new MySqlConnection(constr);
         }
 
@@ -89,7 +97,7 @@ namespace MaterialSkinExample
         {
             materialListView1.Items.Clear();
             connection.Open();
-            string query = "SELECT * FROM mydetails";
+            string query = "SELECT * FROM mydetails ORDER BY sno DESC";
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -108,7 +116,7 @@ namespace MaterialSkinExample
         {
             statusdialogue.Visible = true;
             timer2.Enabled = true;
-            timer2.Interval = 5000;
+            timer2.Interval = 2000;
             timer2.Start();
         }
 
@@ -116,24 +124,66 @@ namespace MaterialSkinExample
         {
             string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
             string work = txtWork.Text;
-            string query = "UPDATE mydetails SET work = CONCAT(work, ', " + work + "') WHERE date= '" + currentDate + "'";
+            string updateQuery = "UPDATE mydetails SET work = CONCAT(work, ', " + work + "') WHERE date= '" + currentDate + "'";
+            string insertQuery = "UPDATE mydetails SET work = '" + work + "' WHERE date= '" + currentDate + "'"; 
+            string checkQuery = "SELECT work from mydetails where date = '" + currentDate + "'";
 
             connection.Open();
 
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            try
-            {
-                cmd.ExecuteNonQuery();
-                status.Text = "Work updated!";
-                clearStatus();
-            }
-            catch (Exception ex)
+            MySqlCommand cmd = new MySqlCommand(checkQuery, connection);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
             {
 
-                MessageBox.Show(" "+ ex.Message);
+                string check = reader["work"].ToString();
+                if (check == "")
+                {
+                    connection.Close();
+                    connection.Open();
+                    MySqlCommand cmd2 = new MySqlCommand(insertQuery, connection);
+                    try
+                    {
+                        cmd2.ExecuteNonQuery();
+                        status.Text = "Added First Work History..";
+                        clearStatus();
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                    finally
+                    {
+                        connection.Close();
+                        displayData();
+                    }
+                    
+                    
+                }
+                else
+                {
+                    connection.Close();
+                    connection.Open();
+                    MySqlCommand cmd2 = new MySqlCommand(updateQuery, connection);
+                    try
+                    {
+                        cmd2.ExecuteNonQuery();
+                        status.Text = "Work History Updated..";
+                        clearStatus();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                    finally
+                    {
+                        connection.Close();
+                        displayData();
+                    }
+                }
+                
             }
-            connection.Close();
-
         }
 
         private void starymyday_Click(object sender, EventArgs e)
@@ -160,7 +210,11 @@ namespace MaterialSkinExample
 
                 MessageBox.Show(ex + " ");
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
+            
 
         }
 
@@ -185,7 +239,11 @@ namespace MaterialSkinExample
 
                 MessageBox.Show(ex + " ");
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
+            
 
         }
 
@@ -197,6 +255,7 @@ namespace MaterialSkinExample
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.Default;
             status.Text = "";
             statusdialogue.Visible = false;
             timer2.Stop();
@@ -205,7 +264,58 @@ namespace MaterialSkinExample
 
         private void refresh_Click(object sender, EventArgs e)
         {
+            status.Text = "Refreshing Data..";
+            this.Cursor = Cursors.AppStarting;
             displayData();
+            clearStatus();
+            
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            materialListView2.Items.Clear();
+
+
+            searchlabel1.Visible = true;
+            searchlabel2.Visible = true;
+            searchlabel3.Visible = true;
+            startTime.Visible = true;
+            endTime.Visible = true;
+            materialListView2.Visible = true;
+
+            string key = dateTimePicker1.Text;
+            status.Text = "Searching work done on " + key + "..";
+            clearStatus();
+
+            string query = "SELECT * from mydetails where date = '" + key + "'";
+
+            connection.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            try
+            {
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    var item = new ListViewItem();
+                    startTime.Text = reader["start"].ToString();  // 2nd column text
+                    item.SubItems.Add(reader["work"].ToString());  // 3nd column text
+                    endTime.Text = reader["end"].ToString();
+                    materialListView2.Items.Add(item);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            finally
+            {
+                connection.Close();
+            }
+            
+
+
         }
     }
 }
