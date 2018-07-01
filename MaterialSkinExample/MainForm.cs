@@ -23,30 +23,32 @@ namespace MaterialSkinExample
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
 			materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-			materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
-
-			
-	        
+			materialSkinManager.ColorScheme = new 
+                ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
         }
 
         private void blue_CheckedChanged(object sender, EventArgs e)
         {
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new 
+                ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
         }
 
         private void green_CheckedChanged(object sender, EventArgs e)
         {
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Green600, Primary.Green700, Primary.Green200, Accent.Red100, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new 
+                ColorScheme(Primary.Green600, Primary.Green700, Primary.Green200, Accent.Red100, TextShade.WHITE);
         }
 
         private void grey_CheckedChanged(object sender, EventArgs e)
         {
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new 
+                ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void darkmode_CheckedChanged(object sender, EventArgs e)
         {
-            materialSkinManager.Theme = materialSkinManager.Theme == MaterialSkinManager.Themes.DARK ? MaterialSkinManager.Themes.LIGHT : MaterialSkinManager.Themes.DARK;
+            materialSkinManager.Theme = materialSkinManager.Theme ==
+                MaterialSkinManager.Themes.DARK ? MaterialSkinManager.Themes.LIGHT : MaterialSkinManager.Themes.DARK;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -85,6 +87,7 @@ namespace MaterialSkinExample
 
         private void displayData()
         {
+            materialListView1.Items.Clear();
             connection.Open();
             string query = "SELECT * FROM mydetails";
             MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -111,7 +114,26 @@ namespace MaterialSkinExample
 
         private void addworkhistory_Click(object sender, EventArgs e)
         {
-            /* TODO */
+            string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
+            string work = txtWork.Text;
+            string query = "UPDATE mydetails SET work = CONCAT(work, ', " + work + "') WHERE date= '" + currentDate + "'";
+
+            connection.Open();
+
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                status.Text = "Work updated!";
+                clearStatus();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(" "+ ex.Message);
+            }
+            connection.Close();
+
         }
 
         private void starymyday_Click(object sender, EventArgs e)
@@ -179,6 +201,11 @@ namespace MaterialSkinExample
             statusdialogue.Visible = false;
             timer2.Stop();
             timer2.Enabled = false;
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            displayData();
         }
     }
 }

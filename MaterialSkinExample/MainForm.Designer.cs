@@ -83,6 +83,7 @@ namespace MaterialSkinExample
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.statusdialogue = new MaterialSkin.Controls.MaterialLabel();
             this.status = new MaterialSkin.Controls.MaterialLabel();
+            this.refresh = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -99,7 +100,7 @@ namespace MaterialSkinExample
             this.endmyday.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.endmyday.Depth = 0;
             this.endmyday.Icon = null;
-            this.endmyday.Location = new System.Drawing.Point(447, 441);
+            this.endmyday.Location = new System.Drawing.Point(324, 441);
             this.endmyday.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.endmyday.MouseState = MaterialSkin.MouseState.HOVER;
             this.endmyday.Name = "endmyday";
@@ -117,7 +118,7 @@ namespace MaterialSkinExample
             this.starymyday.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.starymyday.Depth = 0;
             this.starymyday.Icon = null;
-            this.starymyday.Location = new System.Drawing.Point(18, 441);
+            this.starymyday.Location = new System.Drawing.Point(0, 441);
             this.starymyday.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.starymyday.MouseState = MaterialSkin.MouseState.HOVER;
             this.starymyday.Name = "starymyday";
@@ -596,7 +597,7 @@ namespace MaterialSkinExample
             this.addworkhistory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.addworkhistory.Depth = 0;
             this.addworkhistory.Icon = null;
-            this.addworkhistory.Location = new System.Drawing.Point(240, 441);
+            this.addworkhistory.Location = new System.Drawing.Point(178, 441);
             this.addworkhistory.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addworkhistory.MouseState = MaterialSkin.MouseState.HOVER;
             this.addworkhistory.Name = "addworkhistory";
@@ -665,6 +666,22 @@ namespace MaterialSkinExample
             this.status.TabIndex = 21;
             this.status.Text = "Your Status will appear here";
             // 
+            // refresh
+            // 
+            this.refresh.AutoSize = true;
+            this.refresh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.refresh.Depth = 0;
+            this.refresh.Icon = null;
+            this.refresh.Location = new System.Drawing.Point(516, 441);
+            this.refresh.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refresh.Name = "refresh";
+            this.refresh.Primary = true;
+            this.refresh.Size = new System.Drawing.Size(79, 36);
+            this.refresh.TabIndex = 1;
+            this.refresh.Text = "Refresh";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -672,6 +689,7 @@ namespace MaterialSkinExample
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(617, 484);
             this.ContextMenuStrip = this.materialContextMenuStrip1;
+            this.Controls.Add(this.refresh);
             this.Controls.Add(this.status);
             this.Controls.Add(this.statusdialogue);
             this.Controls.Add(this.currenttime);
@@ -753,5 +771,6 @@ namespace MaterialSkinExample
         private Timer timer2;
         private MaterialLabel statusdialogue;
         private MaterialLabel status;
+        private MaterialRaisedButton refresh;
     }
 }
