@@ -49,6 +49,13 @@ namespace MaterialSkinExample
             this.work = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.end = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.searchlabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
+            this.workDone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.endTime = new MaterialSkin.Controls.MaterialLabel();
+            this.searchlabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.startTime = new MaterialSkin.Controls.MaterialLabel();
+            this.searchlabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -84,13 +91,6 @@ namespace MaterialSkinExample
             this.statusdialogue = new MaterialSkin.Controls.MaterialLabel();
             this.status = new MaterialSkin.Controls.MaterialLabel();
             this.refresh = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.searchlabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.searchlabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.startTime = new MaterialSkin.Controls.MaterialLabel();
-            this.endTime = new MaterialSkin.Controls.MaterialLabel();
-            this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
-            this.searchlabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.workDone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -229,6 +229,7 @@ namespace MaterialSkinExample
             // 
             // materialListView1
             // 
+            this.materialListView1.AllowColumnReorder = true;
             this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.date,
@@ -238,6 +239,7 @@ namespace MaterialSkinExample
             this.materialListView1.Depth = 0;
             this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.materialListView1.FullRowSelect = true;
+            this.materialListView1.GridLines = true;
             this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView1.Location = new System.Drawing.Point(6, 6);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -246,6 +248,7 @@ namespace MaterialSkinExample
             this.materialListView1.OwnerDraw = true;
             this.materialListView1.Size = new System.Drawing.Size(571, 247);
             this.materialListView1.TabIndex = 0;
+            this.materialListView1.TileSize = new System.Drawing.Size(200, 150);
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
             // 
@@ -257,7 +260,7 @@ namespace MaterialSkinExample
             // start
             // 
             this.start.Text = "Start";
-            this.start.Width = 100;
+            this.start.Width = 108;
             // 
             // work
             // 
@@ -267,7 +270,7 @@ namespace MaterialSkinExample
             // end
             // 
             this.end.Text = "End";
-            this.end.Width = 100;
+            this.end.Width = 113;
             // 
             // tabPage3
             // 
@@ -287,6 +290,95 @@ namespace MaterialSkinExample
             this.tabPage3.Text = "Search";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // searchlabel3
+            // 
+            this.searchlabel3.AutoSize = true;
+            this.searchlabel3.Depth = 0;
+            this.searchlabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.searchlabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.searchlabel3.Location = new System.Drawing.Point(144, 72);
+            this.searchlabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.searchlabel3.Name = "searchlabel3";
+            this.searchlabel3.Size = new System.Drawing.Size(277, 19);
+            this.searchlabel3.TabIndex = 5;
+            this.searchlabel3.Text = "You have completed the following tasks";
+            // 
+            // materialListView2
+            // 
+            this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.workDone});
+            this.materialListView2.Depth = 0;
+            this.materialListView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.materialListView2.FullRowSelect = true;
+            this.materialListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.materialListView2.Location = new System.Drawing.Point(8, 104);
+            this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView2.Name = "materialListView2";
+            this.materialListView2.OwnerDraw = true;
+            this.materialListView2.Size = new System.Drawing.Size(568, 128);
+            this.materialListView2.TabIndex = 4;
+            this.materialListView2.UseCompatibleStateImageBehavior = false;
+            this.materialListView2.View = System.Windows.Forms.View.Details;
+            // 
+            // workDone
+            // 
+            this.workDone.Text = "WORK DONE";
+            this.workDone.Width = 560;
+            // 
+            // endTime
+            // 
+            this.endTime.AutoSize = true;
+            this.endTime.Depth = 0;
+            this.endTime.Font = new System.Drawing.Font("Roboto", 11F);
+            this.endTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.endTime.Location = new System.Drawing.Point(472, 40);
+            this.endTime.MouseState = MaterialSkin.MouseState.HOVER;
+            this.endTime.Name = "endTime";
+            this.endTime.Size = new System.Drawing.Size(83, 19);
+            this.endTime.TabIndex = 3;
+            this.endTime.Text = "HH:MM:SS";
+            // 
+            // searchlabel2
+            // 
+            this.searchlabel2.AutoSize = true;
+            this.searchlabel2.Depth = 0;
+            this.searchlabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.searchlabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.searchlabel2.Location = new System.Drawing.Point(296, 40);
+            this.searchlabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.searchlabel2.Name = "searchlabel2";
+            this.searchlabel2.Size = new System.Drawing.Size(174, 19);
+            this.searchlabel2.TabIndex = 3;
+            this.searchlabel2.Text = "and you have worked till:";
+            // 
+            // startTime
+            // 
+            this.startTime.AutoSize = true;
+            this.startTime.Depth = 0;
+            this.startTime.Font = new System.Drawing.Font("Roboto", 11F);
+            this.startTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.startTime.Location = new System.Drawing.Point(200, 40);
+            this.startTime.MouseState = MaterialSkin.MouseState.HOVER;
+            this.startTime.Name = "startTime";
+            this.startTime.Size = new System.Drawing.Size(83, 19);
+            this.startTime.TabIndex = 2;
+            this.startTime.Text = "HH:MM:SS";
+            // 
+            // searchlabel1
+            // 
+            this.searchlabel1.AutoSize = true;
+            this.searchlabel1.Depth = 0;
+            this.searchlabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.searchlabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.searchlabel1.Location = new System.Drawing.Point(24, 40);
+            this.searchlabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.searchlabel1.Name = "searchlabel1";
+            this.searchlabel1.Size = new System.Drawing.Size(172, 19);
+            this.searchlabel1.TabIndex = 2;
+            this.searchlabel1.Text = "You Started your day at :";
+            // 
             // materialLabel13
             // 
             this.materialLabel13.AutoSize = true;
@@ -303,7 +395,7 @@ namespace MaterialSkinExample
             // dateTimePicker1
             // 
             this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.CustomFormat = "dd-MMM-yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(336, 10);
             this.dateTimePicker1.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
@@ -700,95 +792,6 @@ namespace MaterialSkinExample
             this.refresh.Text = "Refresh";
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.refresh_Click);
-            // 
-            // searchlabel1
-            // 
-            this.searchlabel1.AutoSize = true;
-            this.searchlabel1.Depth = 0;
-            this.searchlabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.searchlabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.searchlabel1.Location = new System.Drawing.Point(24, 40);
-            this.searchlabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.searchlabel1.Name = "searchlabel1";
-            this.searchlabel1.Size = new System.Drawing.Size(172, 19);
-            this.searchlabel1.TabIndex = 2;
-            this.searchlabel1.Text = "You Started your day at :";
-            // 
-            // searchlabel2
-            // 
-            this.searchlabel2.AutoSize = true;
-            this.searchlabel2.Depth = 0;
-            this.searchlabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.searchlabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.searchlabel2.Location = new System.Drawing.Point(296, 40);
-            this.searchlabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.searchlabel2.Name = "searchlabel2";
-            this.searchlabel2.Size = new System.Drawing.Size(174, 19);
-            this.searchlabel2.TabIndex = 3;
-            this.searchlabel2.Text = "and you have worked till:";
-            // 
-            // startTime
-            // 
-            this.startTime.AutoSize = true;
-            this.startTime.Depth = 0;
-            this.startTime.Font = new System.Drawing.Font("Roboto", 11F);
-            this.startTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.startTime.Location = new System.Drawing.Point(200, 40);
-            this.startTime.MouseState = MaterialSkin.MouseState.HOVER;
-            this.startTime.Name = "startTime";
-            this.startTime.Size = new System.Drawing.Size(83, 19);
-            this.startTime.TabIndex = 2;
-            this.startTime.Text = "HH:MM:SS";
-            // 
-            // endTime
-            // 
-            this.endTime.AutoSize = true;
-            this.endTime.Depth = 0;
-            this.endTime.Font = new System.Drawing.Font("Roboto", 11F);
-            this.endTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.endTime.Location = new System.Drawing.Point(472, 40);
-            this.endTime.MouseState = MaterialSkin.MouseState.HOVER;
-            this.endTime.Name = "endTime";
-            this.endTime.Size = new System.Drawing.Size(83, 19);
-            this.endTime.TabIndex = 3;
-            this.endTime.Text = "HH:MM:SS";
-            // 
-            // materialListView2
-            // 
-            this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.workDone});
-            this.materialListView2.Depth = 0;
-            this.materialListView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.materialListView2.FullRowSelect = true;
-            this.materialListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView2.Location = new System.Drawing.Point(8, 104);
-            this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView2.Name = "materialListView2";
-            this.materialListView2.OwnerDraw = true;
-            this.materialListView2.Size = new System.Drawing.Size(568, 128);
-            this.materialListView2.TabIndex = 4;
-            this.materialListView2.UseCompatibleStateImageBehavior = false;
-            this.materialListView2.View = System.Windows.Forms.View.Details;
-            // 
-            // searchlabel3
-            // 
-            this.searchlabel3.AutoSize = true;
-            this.searchlabel3.Depth = 0;
-            this.searchlabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.searchlabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.searchlabel3.Location = new System.Drawing.Point(144, 72);
-            this.searchlabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.searchlabel3.Name = "searchlabel3";
-            this.searchlabel3.Size = new System.Drawing.Size(277, 19);
-            this.searchlabel3.TabIndex = 5;
-            this.searchlabel3.Text = "You have completed the following tasks";
-            // 
-            // workDone
-            // 
-            this.workDone.Text = "WORK DONE";
-            this.workDone.Width = 560;
             // 
             // MainForm
             // 

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
-using MaterialSkin;
+﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using MySql.Data.MySqlClient;
+using System;
+using System.Windows.Forms;
 
 namespace MaterialSkinExample
 {
@@ -81,7 +81,7 @@ namespace MaterialSkinExample
             
         }
 
-        private void initilizeDatabase()
+    /*    private void initilizeDatabase()
         {
             server = "db4free.net";
             port = 3306;
@@ -91,7 +91,19 @@ namespace MaterialSkinExample
 
             string constr = "SERVER=" + server + ";" +"PORT ="+ port + ";" + "DATABASE=" + database + ";" + "UID=" + username + ";" + "PASSWORD=" + password + ";";
             connection = new MySqlConnection(constr);
+        } */
+
+        private void initilizeDatabase()
+        {
+            server = "localhost";
+            database = "internship";
+            username = "root";
+            password = "";
+
+            string constr = "SERVER=" + server +";" + "DATABASE=" + database + ";" + "UID=" + username + ";" + "PASSWORD=" + password + ";";
+            connection = new MySqlConnection(constr);
         }
+
 
         private void displayData()
         {
@@ -122,12 +134,19 @@ namespace MaterialSkinExample
 
         private void addworkhistory_Click(object sender, EventArgs e)
         {
-            string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
+            string currentDate = DateTime.Now.ToString("dd-MMM-yyyy");
             string work = txtWork.Text;
             string updateQuery = "UPDATE mydetails SET work = CONCAT(work, ', " + work + "') WHERE date= '" + currentDate + "'";
             string insertQuery = "UPDATE mydetails SET work = '" + work + "' WHERE date= '" + currentDate + "'"; 
             string checkQuery = "SELECT work from mydetails where date = '" + currentDate + "'";
 
+            if (work == "")
+            {
+                status.Text = "Work field cannot be empty...";
+                clearStatus();
+            }
+            else
+            { 
             connection.Open();
 
             MySqlCommand cmd = new MySqlCommand(checkQuery, connection);
@@ -158,8 +177,6 @@ namespace MaterialSkinExample
                         connection.Close();
                         displayData();
                     }
-                    
-                    
                 }
                 else
                 {
@@ -182,14 +199,14 @@ namespace MaterialSkinExample
                         displayData();
                     }
                 }
-                
+                }
             }
         }
 
         private void starymyday_Click(object sender, EventArgs e)
         {
             string currentTime = DateTime.Now.ToLongTimeString();
-            string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
+            string currentDate = DateTime.Now.ToString("dd-MMM-yyyy");
 
             string sql = "INSERT into mydetails(date,start) Values('" + currentDate + "','" + currentTime + "')";
 
@@ -207,12 +224,15 @@ namespace MaterialSkinExample
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex + " ");
+                starymyday.Enabled = false;
+                status.Text = "Today's Record already Added!";
+                clearStatus();
             }
             finally
             {
                 connection.Close();
+                displayData();
+                starymyday.Enabled = false;
             }
             
 
@@ -221,30 +241,52 @@ namespace MaterialSkinExample
         private void endmyday_Click(object sender, EventArgs e)
         {
             string currentTime = DateTime.Now.ToLongTimeString();
-            string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
+            string currentDate = DateTime.Now.ToString("dd-MMM-yyyy");
 
-            string sql = "UPDATE mydetails SET end= '" + currentTime + "'where date='" + currentDate + "'"; ;
+            string insertQuery = "UPDATE mydetails SET end= '" + currentTime + "'where date='" + currentDate + "'"; ;
+            string checkQuery = "SELECT end from mydetails where date = '" + currentDate + "'";
 
             connection.Open();
 
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            try
-            {
-                cmd.ExecuteNonQuery();
-                status.Text = "End Time Noted as " + currentTime;
-                clearStatus();
-            }
-            catch (Exception ex)
+            MySqlCommand cmd = new MySqlCommand(checkQuery, connection);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
             {
 
-                MessageBox.Show(ex + " ");
-            }
-            finally
-            {
-                connection.Close();
-            }
-            
+                string check = reader["end"].ToString();
+                if (check == "")
+                {
+                    connection.Close();
+                    connection.Open();
+                    MySqlCommand cmd2 = new MySqlCommand(insertQuery, connection);
+                    try
+                    {
+                        endmyday.Enabled = false;
+                        cmd2.ExecuteNonQuery();
+                        status.Text = "End time noted as: " + currentTime;
+                        clearStatus();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                    finally
+                    {
+                        connection.Close();
+                        displayData();
+                    }
+                }
+                else
+                {
+                    connection.Close();
+                    endmyday.Enabled = false;
+                    status.Text = "End Time already noted once!";
+                    clearStatus();
+                }
 
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
