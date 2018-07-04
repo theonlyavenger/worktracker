@@ -75,6 +75,16 @@ namespace MaterialSkinExample
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.retroentry = new System.Windows.Forms.TabPage();
+            this.retroAdd = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.tbwork = new System.Windows.Forms.TextBox();
+            this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
+            this.tbend = new System.Windows.Forms.TextBox();
+            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
+            this.tbstart = new System.Windows.Forms.TextBox();
+            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.item1ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
             this.subItem1ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
@@ -97,6 +107,7 @@ namespace MaterialSkinExample
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.retroentry.SuspendLayout();
             this.materialContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,12 +186,13 @@ namespace MaterialSkinExample
             this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Controls.Add(this.tabPage4);
             this.materialTabControl1.Controls.Add(this.tabPage5);
+            this.materialTabControl1.Controls.Add(this.retroentry);
             this.materialTabControl1.Depth = 0;
-            this.materialTabControl1.Location = new System.Drawing.Point(14, 111);
+            this.materialTabControl1.Location = new System.Drawing.Point(14, 112);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(591, 285);
+            this.materialTabControl1.Size = new System.Drawing.Size(591, 284);
             this.materialTabControl1.TabIndex = 18;
             // 
             // tabPage1
@@ -191,7 +203,7 @@ namespace MaterialSkinExample
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(583, 259);
+            this.tabPage1.Size = new System.Drawing.Size(583, 258);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Work Done";
             // 
@@ -223,7 +235,7 @@ namespace MaterialSkinExample
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(583, 259);
+            this.tabPage2.Size = new System.Drawing.Size(583, 258);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Display";
             // 
@@ -239,7 +251,6 @@ namespace MaterialSkinExample
             this.materialListView1.Depth = 0;
             this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.materialListView1.FullRowSelect = true;
-            this.materialListView1.GridLines = true;
             this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView1.Location = new System.Drawing.Point(6, 6);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -285,7 +296,7 @@ namespace MaterialSkinExample
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(583, 259);
+            this.tabPage3.Size = new System.Drawing.Size(583, 258);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Search";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -417,7 +428,7 @@ namespace MaterialSkinExample
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(583, 259);
+            this.tabPage4.Size = new System.Drawing.Size(583, 258);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Settings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -535,7 +546,7 @@ namespace MaterialSkinExample
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(583, 259);
+            this.tabPage5.Size = new System.Drawing.Size(583, 258);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "ABOUT";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -631,6 +642,124 @@ namespace MaterialSkinExample
             this.materialLabel3.Size = new System.Drawing.Size(84, 19);
             this.materialLabel3.TabIndex = 28;
             this.materialLabel3.Text = "Developers";
+            // 
+            // retroentry
+            // 
+            this.retroentry.Controls.Add(this.retroAdd);
+            this.retroentry.Controls.Add(this.tbwork);
+            this.retroentry.Controls.Add(this.materialLabel17);
+            this.retroentry.Controls.Add(this.tbend);
+            this.retroentry.Controls.Add(this.materialLabel16);
+            this.retroentry.Controls.Add(this.tbstart);
+            this.retroentry.Controls.Add(this.materialLabel15);
+            this.retroentry.Controls.Add(this.materialLabel14);
+            this.retroentry.Controls.Add(this.dtpDate);
+            this.retroentry.Location = new System.Drawing.Point(4, 22);
+            this.retroentry.Name = "retroentry";
+            this.retroentry.Padding = new System.Windows.Forms.Padding(3);
+            this.retroentry.Size = new System.Drawing.Size(583, 258);
+            this.retroentry.TabIndex = 5;
+            this.retroentry.Text = "Retro Entry";
+            this.retroentry.UseVisualStyleBackColor = true;
+            // 
+            // retroAdd
+            // 
+            this.retroAdd.AutoSize = true;
+            this.retroAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.retroAdd.Depth = 0;
+            this.retroAdd.Icon = null;
+            this.retroAdd.Location = new System.Drawing.Point(264, 208);
+            this.retroAdd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.retroAdd.Name = "retroAdd";
+            this.retroAdd.Primary = true;
+            this.retroAdd.Size = new System.Drawing.Size(48, 36);
+            this.retroAdd.TabIndex = 3;
+            this.retroAdd.Text = "Add\r\n";
+            this.retroAdd.UseVisualStyleBackColor = true;
+            this.retroAdd.Click += new System.EventHandler(this.retroAdd_Click);
+            // 
+            // tbwork
+            // 
+            this.tbwork.Location = new System.Drawing.Point(24, 80);
+            this.tbwork.Multiline = true;
+            this.tbwork.Name = "tbwork";
+            this.tbwork.Size = new System.Drawing.Size(536, 120);
+            this.tbwork.TabIndex = 2;
+            // 
+            // materialLabel17
+            // 
+            this.materialLabel17.AutoSize = true;
+            this.materialLabel17.Depth = 0;
+            this.materialLabel17.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel17.Location = new System.Drawing.Point(24, 56);
+            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel17.Name = "materialLabel17";
+            this.materialLabel17.Size = new System.Drawing.Size(83, 19);
+            this.materialLabel17.TabIndex = 1;
+            this.materialLabel17.Text = "Work Done";
+            // 
+            // tbend
+            // 
+            this.tbend.Location = new System.Drawing.Point(448, 16);
+            this.tbend.Name = "tbend";
+            this.tbend.Size = new System.Drawing.Size(104, 20);
+            this.tbend.TabIndex = 2;
+            // 
+            // materialLabel16
+            // 
+            this.materialLabel16.AutoSize = true;
+            this.materialLabel16.Depth = 0;
+            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel16.Location = new System.Drawing.Point(392, 8);
+            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel16.Name = "materialLabel16";
+            this.materialLabel16.Size = new System.Drawing.Size(43, 38);
+            this.materialLabel16.TabIndex = 1;
+            this.materialLabel16.Text = "End\r\nTime";
+            // 
+            // tbstart
+            // 
+            this.tbstart.Location = new System.Drawing.Point(264, 16);
+            this.tbstart.Name = "tbstart";
+            this.tbstart.Size = new System.Drawing.Size(104, 20);
+            this.tbstart.TabIndex = 2;
+            // 
+            // materialLabel15
+            // 
+            this.materialLabel15.AutoSize = true;
+            this.materialLabel15.Depth = 0;
+            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel15.Location = new System.Drawing.Point(208, 8);
+            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel15.Name = "materialLabel15";
+            this.materialLabel15.Size = new System.Drawing.Size(43, 38);
+            this.materialLabel15.TabIndex = 1;
+            this.materialLabel15.Text = "Start\r\nTime";
+            // 
+            // materialLabel14
+            // 
+            this.materialLabel14.AutoSize = true;
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel14.Location = new System.Drawing.Point(24, 16);
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            this.materialLabel14.Size = new System.Drawing.Size(40, 19);
+            this.materialLabel14.TabIndex = 1;
+            this.materialLabel14.Text = "Date";
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.CustomFormat = "dd-MMM-yyyy";
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDate.Location = new System.Drawing.Point(80, 16);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(104, 20);
+            this.dtpDate.TabIndex = 0;
             // 
             // materialContextMenuStrip1
             // 
@@ -826,6 +955,8 @@ namespace MaterialSkinExample
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.retroentry.ResumeLayout(false);
+            this.retroentry.PerformLayout();
             this.materialContextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -890,5 +1021,15 @@ namespace MaterialSkinExample
         private MaterialLabel searchlabel3;
         private MaterialListView materialListView2;
         private ColumnHeader workDone;
+        private TabPage retroentry;
+        private MaterialRaisedButton retroAdd;
+        private TextBox tbwork;
+        private MaterialLabel materialLabel17;
+        private TextBox tbend;
+        private MaterialLabel materialLabel16;
+        private TextBox tbstart;
+        private MaterialLabel materialLabel15;
+        private MaterialLabel materialLabel14;
+        private DateTimePicker dtpDate;
     }
 }

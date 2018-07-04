@@ -355,9 +355,40 @@ namespace MaterialSkinExample
             {
                 connection.Close();
             }
-            
-
-
         }
+
+        private void retroAdd_Click(object sender, EventArgs e)
+        {
+            string date = dtpDate.Text;
+            string startTime = tbstart.Text;
+            string endtime = tbend.Text;
+            string work = tbwork.Text;
+
+            string sql = "INSERT into mydetails(date,start,work,end) Values('" + date + "','" + startTime + "','" + work + "','" + endtime + "')";
+
+            connection.Open();
+
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                status.Text = "Entry added...";
+                clearStatus();
+            }
+            catch (Exception)
+            {
+                status.Text = "something went wrong";
+                clearStatus();
+
+
+            }
+            finally
+            {
+                connection.Close();
+                displayData();
+            }
+        }
+
+       
     }
 }
