@@ -54,12 +54,19 @@ namespace MaterialSkinExample
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            ok.Visible = false;
+            cancel.Visible = false;
+            edit.Visible = false;
+            tbedit.Visible = false;
             searchlabel1.Visible = false;
             searchlabel2.Visible = false;
             searchlabel3.Visible = false;
             startTime.Visible = false;
             endTime.Visible = false;
             materialListView2.Visible = false;
+            dtpDate.MinDate = new DateTime(2017, 12, 1);
+            dtpDate.MaxDate = DateTime.Today;
+           
 
             timer1.Enabled = true;
             timer1.Interval = 1000;
@@ -134,6 +141,7 @@ namespace MaterialSkinExample
 
         private void addworkhistory_Click(object sender, EventArgs e)
         {
+           
             string currentDate = DateTime.Now.ToString("dd-MMM-yyyy");
             string work = txtWork.Text;
             string updateQuery = "UPDATE mydetails SET work = CONCAT(work, ', " + work + "') WHERE date= '" + currentDate + "'";
@@ -143,6 +151,7 @@ namespace MaterialSkinExample
             if (work == "")
             {
                 status.Text = "Work field cannot be empty...";
+                
                 clearStatus();
             }
             else
@@ -197,7 +206,8 @@ namespace MaterialSkinExample
                     {
                         connection.Close();
                         displayData();
-                    }
+                            txtWork.Clear();
+                        }
                 }
                 }
             }
@@ -205,7 +215,7 @@ namespace MaterialSkinExample
 
         private void starymyday_Click(object sender, EventArgs e)
         {
-            string currentTime = DateTime.Now.ToLongTimeString();
+            string currentTime = DateTime.Now.ToShortTimeString();
             string currentDate = DateTime.Now.ToString("dd-MMM-yyyy");
 
             string sql = "INSERT into mydetails(date,start) Values('" + currentDate + "','" + currentTime + "')";
@@ -240,7 +250,7 @@ namespace MaterialSkinExample
 
         private void endmyday_Click(object sender, EventArgs e)
         {
-            string currentTime = DateTime.Now.ToLongTimeString();
+            string currentTime = DateTime.Now.ToShortTimeString();
             string currentDate = DateTime.Now.ToString("dd-MMM-yyyy");
 
             string insertQuery = "UPDATE mydetails SET end= '" + currentTime + "'where date='" + currentDate + "'"; ;
@@ -315,19 +325,15 @@ namespace MaterialSkinExample
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            displayWork();
+        }
+
+        private void displayWork()
+        {
             materialListView2.Items.Clear();
 
-
-            searchlabel1.Visible = true;
-            searchlabel2.Visible = true;
-            searchlabel3.Visible = true;
-            startTime.Visible = true;
-            endTime.Visible = true;
-            materialListView2.Visible = true;
-
             string key = dateTimePicker1.Text;
-            status.Text = "Searching work done on " + key + "..";
-            clearStatus();
+            
 
             string query = "SELECT * from mydetails where date = '" + key + "'";
 
@@ -340,14 +346,35 @@ namespace MaterialSkinExample
 
                 if (reader.Read())
                 {
+                    edit.Visible = true;
+                    searchlabel1.Visible = true;
+                    searchlabel2.Visible = true;
+                    searchlabel3.Visible = true;
+                    startTime.Visible = true;
+                    endTime.Visible = true;
+                    materialListView2.Visible = true;
+
                     var item = new ListViewItem();
                     startTime.Text = reader["start"].ToString();  // 2nd column text
                     item.SubItems.Add(reader["work"].ToString());  // 3nd column text
+                    tbedit.Text = reader["work"].ToString();
                     endTime.Text = reader["end"].ToString();
                     materialListView2.Items.Add(item);
                 }
+                else
+                {
+                    edit.Visible = false;
+                    searchlabel1.Visible = false;
+                    searchlabel2.Visible = false;
+                    searchlabel3.Visible = false;
+                    startTime.Visible = false;
+                    endTime.Visible = false;
+                    materialListView2.Visible = false;
+                    status.Text = "No Data found...";
+                    clearStatus();
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
@@ -359,6 +386,8 @@ namespace MaterialSkinExample
 
         private void retroAdd_Click(object sender, EventArgs e)
         {
+            
+
             string date = dtpDate.Text;
             string startTime = tbstart.Text;
             string endtime = tbend.Text;
@@ -386,6 +415,58 @@ namespace MaterialSkinExample
             {
                 connection.Close();
                 displayData();
+                tbwork.Clear();
+            }
+        }
+
+        private void edit_Click(object sender, EventArgs e)
+        {
+            tbedit.Visible = true;
+            tbedit.BringToFront();
+            edit.Visible = false;
+            cancel.Visible = true;
+            ok.Visible = true;
+            //string data = materialListView2.            
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            tbedit.Visible = false;
+            edit.Visible = true;
+            ok.Visible = false;
+            cancel.Visible = false;
+        }
+
+        private void ok_Click(object sender, EventArgs e)
+        {
+            string currentDate = dateTimePicker1.Text;
+            string work = tbedit.Text;
+            string insertQuery = "UPDATE mydetails SET work = '" + work + "' WHERE date= '" + currentDate + "'";
+            connection.Open();
+
+            MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                status.Text = "Entry Updated...";
+                clearStatus();
+                tbedit.Visible = false;
+                ok.Visible = false;
+                edit.Visible = true;
+                cancel.Visible = false;
+            }
+            catch (Exception)
+            {
+                status.Text = "something went wrong";
+                clearStatus();
+
+
+            }
+            finally
+            {
+                connection.Close();
+                displayData();
+                displayWork();
             }
         }
 

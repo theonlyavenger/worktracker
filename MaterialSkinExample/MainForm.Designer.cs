@@ -49,6 +49,10 @@ namespace MaterialSkinExample
             this.work = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.end = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.ok = new MaterialSkin.Controls.MaterialFlatButton();
+            this.cancel = new MaterialSkin.Controls.MaterialFlatButton();
+            this.tbedit = new System.Windows.Forms.TextBox();
+            this.edit = new MaterialSkin.Controls.MaterialFlatButton();
             this.searchlabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
             this.workDone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,6 +62,16 @@ namespace MaterialSkinExample
             this.searchlabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.retroentry = new System.Windows.Forms.TabPage();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.retroAdd = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.tbwork = new System.Windows.Forms.TextBox();
+            this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
+            this.tbend = new System.Windows.Forms.TextBox();
+            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
+            this.tbstart = new System.Windows.Forms.TextBox();
+            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
@@ -75,16 +89,6 @@ namespace MaterialSkinExample
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.retroentry = new System.Windows.Forms.TabPage();
-            this.retroAdd = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.tbwork = new System.Windows.Forms.TextBox();
-            this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
-            this.tbend = new System.Windows.Forms.TextBox();
-            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
-            this.tbstart = new System.Windows.Forms.TextBox();
-            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.item1ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
             this.subItem1ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
@@ -105,9 +109,9 @@ namespace MaterialSkinExample
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.retroentry.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            this.retroentry.SuspendLayout();
             this.materialContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,7 +123,7 @@ namespace MaterialSkinExample
             this.endmyday.Cursor = System.Windows.Forms.Cursors.Hand;
             this.endmyday.Depth = 0;
             this.endmyday.Icon = null;
-            this.endmyday.Location = new System.Drawing.Point(328, 440);
+            this.endmyday.Location = new System.Drawing.Point(400, 440);
             this.endmyday.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.endmyday.MouseState = MaterialSkin.MouseState.HOVER;
             this.endmyday.Name = "endmyday";
@@ -138,7 +142,7 @@ namespace MaterialSkinExample
             this.starymyday.Cursor = System.Windows.Forms.Cursors.Hand;
             this.starymyday.Depth = 0;
             this.starymyday.Icon = null;
-            this.starymyday.Location = new System.Drawing.Point(8, 440);
+            this.starymyday.Location = new System.Drawing.Point(24, 440);
             this.starymyday.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.starymyday.MouseState = MaterialSkin.MouseState.HOVER;
             this.starymyday.Name = "starymyday";
@@ -159,7 +163,7 @@ namespace MaterialSkinExample
             this.materialDivider1.Margin = new System.Windows.Forms.Padding(0);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(625, 1);
+            this.materialDivider1.Size = new System.Drawing.Size(681, 1);
             this.materialDivider1.TabIndex = 16;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -172,7 +176,7 @@ namespace MaterialSkinExample
             this.materialTabSelector1.Location = new System.Drawing.Point(0, 64);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(625, 48);
+            this.materialTabSelector1.Size = new System.Drawing.Size(681, 48);
             this.materialTabSelector1.TabIndex = 17;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
@@ -184,15 +188,15 @@ namespace MaterialSkinExample
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Controls.Add(this.tabPage3);
+            this.materialTabControl1.Controls.Add(this.retroentry);
             this.materialTabControl1.Controls.Add(this.tabPage4);
             this.materialTabControl1.Controls.Add(this.tabPage5);
-            this.materialTabControl1.Controls.Add(this.retroentry);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Location = new System.Drawing.Point(14, 112);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(591, 284);
+            this.materialTabControl1.Size = new System.Drawing.Size(647, 284);
             this.materialTabControl1.TabIndex = 18;
             // 
             // tabPage1
@@ -203,7 +207,7 @@ namespace MaterialSkinExample
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(583, 258);
+            this.tabPage1.Size = new System.Drawing.Size(639, 258);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Work Done";
             // 
@@ -222,10 +226,11 @@ namespace MaterialSkinExample
             // 
             // txtWork
             // 
+            this.txtWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWork.Location = new System.Drawing.Point(6, 45);
             this.txtWork.Multiline = true;
             this.txtWork.Name = "txtWork";
-            this.txtWork.Size = new System.Drawing.Size(571, 203);
+            this.txtWork.Size = new System.Drawing.Size(626, 203);
             this.txtWork.TabIndex = 22;
             // 
             // tabPage2
@@ -235,7 +240,7 @@ namespace MaterialSkinExample
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(583, 258);
+            this.tabPage2.Size = new System.Drawing.Size(639, 258);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Display";
             // 
@@ -257,7 +262,7 @@ namespace MaterialSkinExample
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(571, 247);
+            this.materialListView1.Size = new System.Drawing.Size(626, 247);
             this.materialListView1.TabIndex = 0;
             this.materialListView1.TileSize = new System.Drawing.Size(200, 150);
             this.materialListView1.UseCompatibleStateImageBehavior = false;
@@ -276,7 +281,7 @@ namespace MaterialSkinExample
             // work
             // 
             this.work.Text = "Work";
-            this.work.Width = 250;
+            this.work.Width = 288;
             // 
             // end
             // 
@@ -285,6 +290,10 @@ namespace MaterialSkinExample
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.ok);
+            this.tabPage3.Controls.Add(this.cancel);
+            this.tabPage3.Controls.Add(this.tbedit);
+            this.tabPage3.Controls.Add(this.edit);
             this.tabPage3.Controls.Add(this.searchlabel3);
             this.tabPage3.Controls.Add(this.materialListView2);
             this.tabPage3.Controls.Add(this.endTime);
@@ -296,10 +305,70 @@ namespace MaterialSkinExample
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(583, 258);
+            this.tabPage3.Size = new System.Drawing.Size(639, 258);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Search";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // ok
+            // 
+            this.ok.AutoSize = true;
+            this.ok.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ok.Depth = 0;
+            this.ok.Icon = null;
+            this.ok.Location = new System.Drawing.Point(568, 144);
+            this.ok.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ok.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ok.Name = "ok";
+            this.ok.Primary = false;
+            this.ok.Size = new System.Drawing.Size(39, 36);
+            this.ok.TabIndex = 9;
+            this.ok.Text = "OK";
+            this.ok.UseVisualStyleBackColor = true;
+            this.ok.Click += new System.EventHandler(this.ok_Click);
+            // 
+            // cancel
+            // 
+            this.cancel.AutoSize = true;
+            this.cancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cancel.Depth = 0;
+            this.cancel.Icon = null;
+            this.cancel.Location = new System.Drawing.Point(568, 184);
+            this.cancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.cancel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cancel.Name = "cancel";
+            this.cancel.Primary = false;
+            this.cancel.Size = new System.Drawing.Size(73, 36);
+            this.cancel.TabIndex = 8;
+            this.cancel.Text = "Cancel";
+            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
+            // 
+            // tbedit
+            // 
+            this.tbedit.Location = new System.Drawing.Point(8, 144);
+            this.tbedit.Multiline = true;
+            this.tbedit.Name = "tbedit";
+            this.tbedit.Size = new System.Drawing.Size(560, 32);
+            this.tbedit.TabIndex = 6;
+            // 
+            // edit
+            // 
+            this.edit.AutoSize = true;
+            this.edit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.edit.Depth = 0;
+            this.edit.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.edit.Icon = null;
+            this.edit.Location = new System.Drawing.Point(568, 144);
+            this.edit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.edit.MouseState = MaterialSkin.MouseState.HOVER;
+            this.edit.Name = "edit";
+            this.edit.Primary = false;
+            this.edit.Size = new System.Drawing.Size(50, 36);
+            this.edit.TabIndex = 7;
+            this.edit.Text = "EDIT";
+            this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
             // searchlabel3
             // 
@@ -307,7 +376,7 @@ namespace MaterialSkinExample
             this.searchlabel3.Depth = 0;
             this.searchlabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.searchlabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.searchlabel3.Location = new System.Drawing.Point(144, 72);
+            this.searchlabel3.Location = new System.Drawing.Point(170, 76);
             this.searchlabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.searchlabel3.Name = "searchlabel3";
             this.searchlabel3.Size = new System.Drawing.Size(277, 19);
@@ -328,7 +397,7 @@ namespace MaterialSkinExample
             this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView2.Name = "materialListView2";
             this.materialListView2.OwnerDraw = true;
-            this.materialListView2.Size = new System.Drawing.Size(568, 128);
+            this.materialListView2.Size = new System.Drawing.Size(560, 128);
             this.materialListView2.TabIndex = 4;
             this.materialListView2.UseCompatibleStateImageBehavior = false;
             this.materialListView2.View = System.Windows.Forms.View.Details;
@@ -344,7 +413,7 @@ namespace MaterialSkinExample
             this.endTime.Depth = 0;
             this.endTime.Font = new System.Drawing.Font("Roboto", 11F);
             this.endTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.endTime.Location = new System.Drawing.Point(472, 40);
+            this.endTime.Location = new System.Drawing.Point(488, 44);
             this.endTime.MouseState = MaterialSkin.MouseState.HOVER;
             this.endTime.Name = "endTime";
             this.endTime.Size = new System.Drawing.Size(83, 19);
@@ -357,7 +426,7 @@ namespace MaterialSkinExample
             this.searchlabel2.Depth = 0;
             this.searchlabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.searchlabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.searchlabel2.Location = new System.Drawing.Point(296, 40);
+            this.searchlabel2.Location = new System.Drawing.Point(312, 44);
             this.searchlabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.searchlabel2.Name = "searchlabel2";
             this.searchlabel2.Size = new System.Drawing.Size(174, 19);
@@ -370,7 +439,7 @@ namespace MaterialSkinExample
             this.startTime.Depth = 0;
             this.startTime.Font = new System.Drawing.Font("Roboto", 11F);
             this.startTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.startTime.Location = new System.Drawing.Point(200, 40);
+            this.startTime.Location = new System.Drawing.Point(226, 44);
             this.startTime.MouseState = MaterialSkin.MouseState.HOVER;
             this.startTime.Name = "startTime";
             this.startTime.Size = new System.Drawing.Size(83, 19);
@@ -383,7 +452,7 @@ namespace MaterialSkinExample
             this.searchlabel1.Depth = 0;
             this.searchlabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.searchlabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.searchlabel1.Location = new System.Drawing.Point(24, 40);
+            this.searchlabel1.Location = new System.Drawing.Point(50, 44);
             this.searchlabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.searchlabel1.Name = "searchlabel1";
             this.searchlabel1.Size = new System.Drawing.Size(172, 19);
@@ -396,7 +465,7 @@ namespace MaterialSkinExample
             this.materialLabel13.Depth = 0;
             this.materialLabel13.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel13.Location = new System.Drawing.Point(110, 12);
+            this.materialLabel13.Location = new System.Drawing.Point(136, 16);
             this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel13.Name = "materialLabel13";
             this.materialLabel13.Size = new System.Drawing.Size(220, 19);
@@ -408,12 +477,131 @@ namespace MaterialSkinExample
             this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.CustomFormat = "dd-MMM-yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(336, 10);
+            this.dateTimePicker1.Location = new System.Drawing.Point(362, 14);
             this.dateTimePicker1.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(112, 20);
             this.dateTimePicker1.TabIndex = 0;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // retroentry
+            // 
+            this.retroentry.Controls.Add(this.dtpDate);
+            this.retroentry.Controls.Add(this.retroAdd);
+            this.retroentry.Controls.Add(this.tbwork);
+            this.retroentry.Controls.Add(this.materialLabel17);
+            this.retroentry.Controls.Add(this.tbend);
+            this.retroentry.Controls.Add(this.materialLabel16);
+            this.retroentry.Controls.Add(this.tbstart);
+            this.retroentry.Controls.Add(this.materialLabel15);
+            this.retroentry.Controls.Add(this.materialLabel14);
+            this.retroentry.Location = new System.Drawing.Point(4, 22);
+            this.retroentry.Name = "retroentry";
+            this.retroentry.Padding = new System.Windows.Forms.Padding(3);
+            this.retroentry.Size = new System.Drawing.Size(639, 258);
+            this.retroentry.TabIndex = 5;
+            this.retroentry.Text = "Retro Entry";
+            this.retroentry.UseVisualStyleBackColor = true;
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.CustomFormat = "dd-MMM-yyyy";
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDate.Location = new System.Drawing.Point(72, 16);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(112, 20);
+            this.dtpDate.TabIndex = 4;
+            // 
+            // retroAdd
+            // 
+            this.retroAdd.AutoSize = true;
+            this.retroAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.retroAdd.Depth = 0;
+            this.retroAdd.Icon = null;
+            this.retroAdd.Location = new System.Drawing.Point(264, 208);
+            this.retroAdd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.retroAdd.Name = "retroAdd";
+            this.retroAdd.Primary = true;
+            this.retroAdd.Size = new System.Drawing.Size(94, 36);
+            this.retroAdd.TabIndex = 3;
+            this.retroAdd.Text = "Add Entry";
+            this.retroAdd.UseVisualStyleBackColor = true;
+            this.retroAdd.Click += new System.EventHandler(this.retroAdd_Click);
+            // 
+            // tbwork
+            // 
+            this.tbwork.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbwork.Location = new System.Drawing.Point(24, 80);
+            this.tbwork.Multiline = true;
+            this.tbwork.Name = "tbwork";
+            this.tbwork.Size = new System.Drawing.Size(592, 120);
+            this.tbwork.TabIndex = 2;
+            // 
+            // materialLabel17
+            // 
+            this.materialLabel17.AutoSize = true;
+            this.materialLabel17.Depth = 0;
+            this.materialLabel17.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel17.Location = new System.Drawing.Point(24, 56);
+            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel17.Name = "materialLabel17";
+            this.materialLabel17.Size = new System.Drawing.Size(83, 19);
+            this.materialLabel17.TabIndex = 1;
+            this.materialLabel17.Text = "Work Done";
+            // 
+            // tbend
+            // 
+            this.tbend.Location = new System.Drawing.Point(512, 16);
+            this.tbend.Name = "tbend";
+            this.tbend.Size = new System.Drawing.Size(104, 20);
+            this.tbend.TabIndex = 2;
+            // 
+            // materialLabel16
+            // 
+            this.materialLabel16.AutoSize = true;
+            this.materialLabel16.Depth = 0;
+            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel16.Location = new System.Drawing.Point(456, 8);
+            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel16.Name = "materialLabel16";
+            this.materialLabel16.Size = new System.Drawing.Size(43, 38);
+            this.materialLabel16.TabIndex = 1;
+            this.materialLabel16.Text = "End\r\nTime";
+            // 
+            // tbstart
+            // 
+            this.tbstart.Location = new System.Drawing.Point(296, 16);
+            this.tbstart.Name = "tbstart";
+            this.tbstart.Size = new System.Drawing.Size(104, 20);
+            this.tbstart.TabIndex = 2;
+            // 
+            // materialLabel15
+            // 
+            this.materialLabel15.AutoSize = true;
+            this.materialLabel15.Depth = 0;
+            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel15.Location = new System.Drawing.Point(240, 8);
+            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel15.Name = "materialLabel15";
+            this.materialLabel15.Size = new System.Drawing.Size(43, 38);
+            this.materialLabel15.TabIndex = 1;
+            this.materialLabel15.Text = "Start\r\nTime";
+            // 
+            // materialLabel14
+            // 
+            this.materialLabel14.AutoSize = true;
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel14.Location = new System.Drawing.Point(24, 16);
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            this.materialLabel14.Size = new System.Drawing.Size(40, 19);
+            this.materialLabel14.TabIndex = 1;
+            this.materialLabel14.Text = "Date";
             // 
             // tabPage4
             // 
@@ -428,7 +616,7 @@ namespace MaterialSkinExample
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(583, 258);
+            this.tabPage4.Size = new System.Drawing.Size(639, 258);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Settings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -546,9 +734,9 @@ namespace MaterialSkinExample
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(583, 258);
+            this.tabPage5.Size = new System.Drawing.Size(639, 258);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "ABOUT";
+            this.tabPage5.Text = "About";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // materialLabel7
@@ -557,7 +745,7 @@ namespace MaterialSkinExample
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(291, 153);
+            this.materialLabel7.Location = new System.Drawing.Point(318, 168);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(116, 19);
@@ -570,7 +758,7 @@ namespace MaterialSkinExample
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(146, 153);
+            this.materialLabel5.Location = new System.Drawing.Point(173, 168);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(149, 19);
@@ -583,7 +771,7 @@ namespace MaterialSkinExample
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(291, 124);
+            this.materialLabel6.Location = new System.Drawing.Point(318, 139);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(146, 19);
@@ -596,7 +784,7 @@ namespace MaterialSkinExample
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(146, 124);
+            this.materialLabel4.Location = new System.Drawing.Point(173, 139);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(151, 19);
@@ -609,7 +797,7 @@ namespace MaterialSkinExample
             this.materialLabel10.Depth = 0;
             this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel10.Location = new System.Drawing.Point(237, 41);
+            this.materialLabel10.Location = new System.Drawing.Point(264, 56);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
             this.materialLabel10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -623,7 +811,7 @@ namespace MaterialSkinExample
             this.materialLabel11.Depth = 0;
             this.materialLabel11.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel11.Location = new System.Drawing.Point(269, 60);
+            this.materialLabel11.Location = new System.Drawing.Point(296, 75);
             this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel11.Name = "materialLabel11";
             this.materialLabel11.Size = new System.Drawing.Size(43, 19);
@@ -636,130 +824,12 @@ namespace MaterialSkinExample
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(248, 90);
+            this.materialLabel3.Location = new System.Drawing.Point(275, 105);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(84, 19);
             this.materialLabel3.TabIndex = 28;
             this.materialLabel3.Text = "Developers";
-            // 
-            // retroentry
-            // 
-            this.retroentry.Controls.Add(this.retroAdd);
-            this.retroentry.Controls.Add(this.tbwork);
-            this.retroentry.Controls.Add(this.materialLabel17);
-            this.retroentry.Controls.Add(this.tbend);
-            this.retroentry.Controls.Add(this.materialLabel16);
-            this.retroentry.Controls.Add(this.tbstart);
-            this.retroentry.Controls.Add(this.materialLabel15);
-            this.retroentry.Controls.Add(this.materialLabel14);
-            this.retroentry.Controls.Add(this.dtpDate);
-            this.retroentry.Location = new System.Drawing.Point(4, 22);
-            this.retroentry.Name = "retroentry";
-            this.retroentry.Padding = new System.Windows.Forms.Padding(3);
-            this.retroentry.Size = new System.Drawing.Size(583, 258);
-            this.retroentry.TabIndex = 5;
-            this.retroentry.Text = "Retro Entry";
-            this.retroentry.UseVisualStyleBackColor = true;
-            // 
-            // retroAdd
-            // 
-            this.retroAdd.AutoSize = true;
-            this.retroAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.retroAdd.Depth = 0;
-            this.retroAdd.Icon = null;
-            this.retroAdd.Location = new System.Drawing.Point(264, 208);
-            this.retroAdd.MouseState = MaterialSkin.MouseState.HOVER;
-            this.retroAdd.Name = "retroAdd";
-            this.retroAdd.Primary = true;
-            this.retroAdd.Size = new System.Drawing.Size(48, 36);
-            this.retroAdd.TabIndex = 3;
-            this.retroAdd.Text = "Add\r\n";
-            this.retroAdd.UseVisualStyleBackColor = true;
-            this.retroAdd.Click += new System.EventHandler(this.retroAdd_Click);
-            // 
-            // tbwork
-            // 
-            this.tbwork.Location = new System.Drawing.Point(24, 80);
-            this.tbwork.Multiline = true;
-            this.tbwork.Name = "tbwork";
-            this.tbwork.Size = new System.Drawing.Size(536, 120);
-            this.tbwork.TabIndex = 2;
-            // 
-            // materialLabel17
-            // 
-            this.materialLabel17.AutoSize = true;
-            this.materialLabel17.Depth = 0;
-            this.materialLabel17.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel17.Location = new System.Drawing.Point(24, 56);
-            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel17.Name = "materialLabel17";
-            this.materialLabel17.Size = new System.Drawing.Size(83, 19);
-            this.materialLabel17.TabIndex = 1;
-            this.materialLabel17.Text = "Work Done";
-            // 
-            // tbend
-            // 
-            this.tbend.Location = new System.Drawing.Point(448, 16);
-            this.tbend.Name = "tbend";
-            this.tbend.Size = new System.Drawing.Size(104, 20);
-            this.tbend.TabIndex = 2;
-            // 
-            // materialLabel16
-            // 
-            this.materialLabel16.AutoSize = true;
-            this.materialLabel16.Depth = 0;
-            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel16.Location = new System.Drawing.Point(392, 8);
-            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel16.Name = "materialLabel16";
-            this.materialLabel16.Size = new System.Drawing.Size(43, 38);
-            this.materialLabel16.TabIndex = 1;
-            this.materialLabel16.Text = "End\r\nTime";
-            // 
-            // tbstart
-            // 
-            this.tbstart.Location = new System.Drawing.Point(264, 16);
-            this.tbstart.Name = "tbstart";
-            this.tbstart.Size = new System.Drawing.Size(104, 20);
-            this.tbstart.TabIndex = 2;
-            // 
-            // materialLabel15
-            // 
-            this.materialLabel15.AutoSize = true;
-            this.materialLabel15.Depth = 0;
-            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel15.Location = new System.Drawing.Point(208, 8);
-            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel15.Name = "materialLabel15";
-            this.materialLabel15.Size = new System.Drawing.Size(43, 38);
-            this.materialLabel15.TabIndex = 1;
-            this.materialLabel15.Text = "Start\r\nTime";
-            // 
-            // materialLabel14
-            // 
-            this.materialLabel14.AutoSize = true;
-            this.materialLabel14.Depth = 0;
-            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel14.Location = new System.Drawing.Point(24, 16);
-            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel14.Name = "materialLabel14";
-            this.materialLabel14.Size = new System.Drawing.Size(40, 19);
-            this.materialLabel14.TabIndex = 1;
-            this.materialLabel14.Text = "Date";
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.CustomFormat = "dd-MMM-yyyy";
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(80, 16);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(104, 20);
-            this.dtpDate.TabIndex = 0;
             // 
             // materialContextMenuStrip1
             // 
@@ -836,7 +906,7 @@ namespace MaterialSkinExample
             this.addworkhistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addworkhistory.Depth = 0;
             this.addworkhistory.Icon = null;
-            this.addworkhistory.Location = new System.Drawing.Point(176, 440);
+            this.addworkhistory.Location = new System.Drawing.Point(224, 440);
             this.addworkhistory.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addworkhistory.MouseState = MaterialSkin.MouseState.HOVER;
             this.addworkhistory.Name = "addworkhistory";
@@ -853,7 +923,7 @@ namespace MaterialSkinExample
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(351, 33);
+            this.label1.Location = new System.Drawing.Point(400, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 18);
             this.label1.TabIndex = 19;
@@ -865,7 +935,7 @@ namespace MaterialSkinExample
             this.currenttime.BackColor = System.Drawing.Color.Transparent;
             this.currenttime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currenttime.ForeColor = System.Drawing.Color.White;
-            this.currenttime.Location = new System.Drawing.Point(495, 33);
+            this.currenttime.Location = new System.Drawing.Point(544, 32);
             this.currenttime.Name = "currenttime";
             this.currenttime.Size = new System.Drawing.Size(126, 18);
             this.currenttime.TabIndex = 20;
@@ -912,7 +982,7 @@ namespace MaterialSkinExample
             this.refresh.Cursor = System.Windows.Forms.Cursors.Default;
             this.refresh.Depth = 0;
             this.refresh.Icon = null;
-            this.refresh.Location = new System.Drawing.Point(512, 440);
+            this.refresh.Location = new System.Drawing.Point(576, 440);
             this.refresh.MouseState = MaterialSkin.MouseState.HOVER;
             this.refresh.Name = "refresh";
             this.refresh.Primary = true;
@@ -927,7 +997,7 @@ namespace MaterialSkinExample
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(617, 484);
+            this.ClientSize = new System.Drawing.Size(673, 484);
             this.ContextMenuStrip = this.materialContextMenuStrip1;
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.status);
@@ -942,7 +1012,6 @@ namespace MaterialSkinExample
             this.Controls.Add(this.starymyday);
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Sizable = false;
             this.Text = "WORK TRACKER";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.materialTabControl1.ResumeLayout(false);
@@ -951,12 +1020,12 @@ namespace MaterialSkinExample
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.retroentry.ResumeLayout(false);
+            this.retroentry.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            this.retroentry.ResumeLayout(false);
-            this.retroentry.PerformLayout();
             this.materialContextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1019,8 +1088,6 @@ namespace MaterialSkinExample
         private MaterialLabel startTime;
         private MaterialLabel searchlabel1;
         private MaterialLabel searchlabel3;
-        private MaterialListView materialListView2;
-        private ColumnHeader workDone;
         private TabPage retroentry;
         private MaterialRaisedButton retroAdd;
         private TextBox tbwork;
@@ -1030,6 +1097,12 @@ namespace MaterialSkinExample
         private TextBox tbstart;
         private MaterialLabel materialLabel15;
         private MaterialLabel materialLabel14;
+        private TextBox tbedit;
+        private MaterialFlatButton edit;
+        private ColumnHeader workDone;
+        private MaterialListView materialListView2;
+        private MaterialFlatButton cancel;
+        private MaterialFlatButton ok;
         private DateTimePicker dtpDate;
     }
 }
