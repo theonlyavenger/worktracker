@@ -49,19 +49,20 @@ namespace MaterialSkinExample
             this.work = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.end = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.searchlabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblwork = new MaterialSkin.Controls.MaterialLabel();
             this.ok = new MaterialSkin.Controls.MaterialFlatButton();
             this.cancel = new MaterialSkin.Controls.MaterialFlatButton();
             this.tbedit = new System.Windows.Forms.TextBox();
             this.edit = new MaterialSkin.Controls.MaterialFlatButton();
             this.searchlabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
-            this.workDone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.endTime = new MaterialSkin.Controls.MaterialLabel();
             this.searchlabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.startTime = new MaterialSkin.Controls.MaterialLabel();
             this.searchlabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.hours = new MaterialSkin.Controls.MaterialLabel();
             this.retroentry = new System.Windows.Forms.TabPage();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.retroAdd = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -83,9 +84,7 @@ namespace MaterialSkinExample
             this.darkmode = new MaterialSkin.Controls.MaterialCheckBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -290,18 +289,20 @@ namespace MaterialSkinExample
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.searchlabel4);
+            this.tabPage3.Controls.Add(this.lblwork);
             this.tabPage3.Controls.Add(this.ok);
             this.tabPage3.Controls.Add(this.cancel);
             this.tabPage3.Controls.Add(this.tbedit);
             this.tabPage3.Controls.Add(this.edit);
             this.tabPage3.Controls.Add(this.searchlabel3);
-            this.tabPage3.Controls.Add(this.materialListView2);
             this.tabPage3.Controls.Add(this.endTime);
             this.tabPage3.Controls.Add(this.searchlabel2);
             this.tabPage3.Controls.Add(this.startTime);
             this.tabPage3.Controls.Add(this.searchlabel1);
             this.tabPage3.Controls.Add(this.materialLabel13);
             this.tabPage3.Controls.Add(this.dateTimePicker1);
+            this.tabPage3.Controls.Add(this.hours);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -309,6 +310,31 @@ namespace MaterialSkinExample
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Search";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // searchlabel4
+            // 
+            this.searchlabel4.AutoSize = true;
+            this.searchlabel4.Depth = 0;
+            this.searchlabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.searchlabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.searchlabel4.Location = new System.Drawing.Point(432, 64);
+            this.searchlabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.searchlabel4.Name = "searchlabel4";
+            this.searchlabel4.Size = new System.Drawing.Size(109, 19);
+            this.searchlabel4.TabIndex = 23;
+            this.searchlabel4.Text = "Working Hours";
+            // 
+            // lblwork
+            // 
+            this.lblwork.AutoSize = true;
+            this.lblwork.Depth = 0;
+            this.lblwork.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblwork.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblwork.Location = new System.Drawing.Point(8, 144);
+            this.lblwork.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblwork.Name = "lblwork";
+            this.lblwork.Size = new System.Drawing.Size(0, 19);
+            this.lblwork.TabIndex = 22;
             // 
             // ok
             // 
@@ -346,6 +372,7 @@ namespace MaterialSkinExample
             // 
             // tbedit
             // 
+            this.tbedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbedit.Location = new System.Drawing.Point(8, 144);
             this.tbedit.Multiline = true;
             this.tbedit.Name = "tbedit";
@@ -376,36 +403,12 @@ namespace MaterialSkinExample
             this.searchlabel3.Depth = 0;
             this.searchlabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.searchlabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.searchlabel3.Location = new System.Drawing.Point(170, 76);
+            this.searchlabel3.Location = new System.Drawing.Point(8, 112);
             this.searchlabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.searchlabel3.Name = "searchlabel3";
             this.searchlabel3.Size = new System.Drawing.Size(277, 19);
             this.searchlabel3.TabIndex = 5;
             this.searchlabel3.Text = "You have completed the following tasks";
-            // 
-            // materialListView2
-            // 
-            this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.workDone});
-            this.materialListView2.Depth = 0;
-            this.materialListView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.materialListView2.FullRowSelect = true;
-            this.materialListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView2.Location = new System.Drawing.Point(8, 104);
-            this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView2.Name = "materialListView2";
-            this.materialListView2.OwnerDraw = true;
-            this.materialListView2.Size = new System.Drawing.Size(560, 128);
-            this.materialListView2.TabIndex = 4;
-            this.materialListView2.UseCompatibleStateImageBehavior = false;
-            this.materialListView2.View = System.Windows.Forms.View.Details;
-            // 
-            // workDone
-            // 
-            this.workDone.Text = "WORK DONE";
-            this.workDone.Width = 560;
             // 
             // endTime
             // 
@@ -413,7 +416,7 @@ namespace MaterialSkinExample
             this.endTime.Depth = 0;
             this.endTime.Font = new System.Drawing.Font("Roboto", 11F);
             this.endTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.endTime.Location = new System.Drawing.Point(488, 44);
+            this.endTime.Location = new System.Drawing.Point(304, 64);
             this.endTime.MouseState = MaterialSkin.MouseState.HOVER;
             this.endTime.Name = "endTime";
             this.endTime.Size = new System.Drawing.Size(83, 19);
@@ -426,12 +429,12 @@ namespace MaterialSkinExample
             this.searchlabel2.Depth = 0;
             this.searchlabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.searchlabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.searchlabel2.Location = new System.Drawing.Point(312, 44);
+            this.searchlabel2.Location = new System.Drawing.Point(224, 64);
             this.searchlabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.searchlabel2.Name = "searchlabel2";
-            this.searchlabel2.Size = new System.Drawing.Size(174, 19);
+            this.searchlabel2.Size = new System.Drawing.Size(76, 19);
             this.searchlabel2.TabIndex = 3;
-            this.searchlabel2.Text = "and you have worked till:";
+            this.searchlabel2.Text = "End Time:";
             // 
             // startTime
             // 
@@ -439,7 +442,7 @@ namespace MaterialSkinExample
             this.startTime.Depth = 0;
             this.startTime.Font = new System.Drawing.Font("Roboto", 11F);
             this.startTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.startTime.Location = new System.Drawing.Point(226, 44);
+            this.startTime.Location = new System.Drawing.Point(96, 64);
             this.startTime.MouseState = MaterialSkin.MouseState.HOVER;
             this.startTime.Name = "startTime";
             this.startTime.Size = new System.Drawing.Size(83, 19);
@@ -452,12 +455,12 @@ namespace MaterialSkinExample
             this.searchlabel1.Depth = 0;
             this.searchlabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.searchlabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.searchlabel1.Location = new System.Drawing.Point(50, 44);
+            this.searchlabel1.Location = new System.Drawing.Point(16, 64);
             this.searchlabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.searchlabel1.Name = "searchlabel1";
-            this.searchlabel1.Size = new System.Drawing.Size(172, 19);
+            this.searchlabel1.Size = new System.Drawing.Size(87, 19);
             this.searchlabel1.TabIndex = 2;
-            this.searchlabel1.Text = "You Started your day at :";
+            this.searchlabel1.Text = "Start Time: ";
             // 
             // materialLabel13
             // 
@@ -483,6 +486,19 @@ namespace MaterialSkinExample
             this.dateTimePicker1.Size = new System.Drawing.Size(112, 20);
             this.dateTimePicker1.TabIndex = 0;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // hours
+            // 
+            this.hours.AutoSize = true;
+            this.hours.Depth = 0;
+            this.hours.Font = new System.Drawing.Font("Roboto", 11F);
+            this.hours.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.hours.Location = new System.Drawing.Point(544, 64);
+            this.hours.MouseState = MaterialSkin.MouseState.HOVER;
+            this.hours.Name = "hours";
+            this.hours.Size = new System.Drawing.Size(37, 19);
+            this.hours.TabIndex = 10;
+            this.hours.Text = "H:M";
             // 
             // retroentry
             // 
@@ -725,9 +741,7 @@ namespace MaterialSkinExample
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.materialLabel7);
-            this.tabPage5.Controls.Add(this.materialLabel5);
             this.tabPage5.Controls.Add(this.materialLabel6);
-            this.tabPage5.Controls.Add(this.materialLabel4);
             this.tabPage5.Controls.Add(this.materialLabel10);
             this.tabPage5.Controls.Add(this.materialLabel11);
             this.tabPage5.Controls.Add(this.materialLabel3);
@@ -738,6 +752,7 @@ namespace MaterialSkinExample
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "About";
             this.tabPage5.UseVisualStyleBackColor = true;
+            
             // 
             // materialLabel7
             // 
@@ -745,25 +760,12 @@ namespace MaterialSkinExample
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(318, 168);
+            this.materialLabel7.Location = new System.Drawing.Point(264, 168);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(116, 19);
             this.materialLabel7.TabIndex = 24;
             this.materialLabel7.Text = "RADHIKA PATIL";
-            // 
-            // materialLabel5
-            // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(173, 168);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(149, 19);
-            this.materialLabel5.TabIndex = 25;
-            this.materialLabel5.Text = "Backend Developer - ";
             // 
             // materialLabel6
             // 
@@ -771,25 +773,12 @@ namespace MaterialSkinExample
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(318, 139);
+            this.materialLabel6.Location = new System.Drawing.Point(248, 139);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(146, 19);
             this.materialLabel6.TabIndex = 26;
             this.materialLabel6.Text = "MANOJ JAHGIRDAR";
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(173, 139);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(151, 19);
-            this.materialLabel4.TabIndex = 27;
-            this.materialLabel4.Text = "Frontend Developer - ";
             // 
             // materialLabel10
             // 
@@ -816,7 +805,7 @@ namespace MaterialSkinExample
             this.materialLabel11.Name = "materialLabel11";
             this.materialLabel11.Size = new System.Drawing.Size(43, 19);
             this.materialLabel11.TabIndex = 28;
-            this.materialLabel11.Text = "V 2.0";
+            this.materialLabel11.Text = "V 2.5";
             // 
             // materialLabel3
             // 
@@ -1068,9 +1057,7 @@ namespace MaterialSkinExample
         private TabPage tabPage5;
         private MaterialLabel materialLabel11;
         private MaterialLabel materialLabel3;
-        private MaterialLabel materialLabel4;
         private MaterialLabel materialLabel6;
-        private MaterialLabel materialLabel5;
         private MaterialLabel materialLabel7;
         private MaterialLabel materialLabel10;
         private MaterialLabel materialLabel12;
@@ -1099,10 +1086,11 @@ namespace MaterialSkinExample
         private MaterialLabel materialLabel14;
         private TextBox tbedit;
         private MaterialFlatButton edit;
-        private ColumnHeader workDone;
-        private MaterialListView materialListView2;
         private MaterialFlatButton cancel;
         private MaterialFlatButton ok;
         private DateTimePicker dtpDate;
+        private MaterialLabel hours;
+        private MaterialLabel lblwork;
+        private MaterialLabel searchlabel4;
     }
 }

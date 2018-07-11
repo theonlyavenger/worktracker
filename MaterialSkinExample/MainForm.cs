@@ -10,7 +10,7 @@ namespace MaterialSkinExample
     {
         public MySqlConnection connection;
         string server;
-        int port;
+        //int port;
         string database;
         string username;
         string password;
@@ -61,9 +61,10 @@ namespace MaterialSkinExample
             searchlabel1.Visible = false;
             searchlabel2.Visible = false;
             searchlabel3.Visible = false;
+            searchlabel4.Visible = false;
             startTime.Visible = false;
             endTime.Visible = false;
-            materialListView2.Visible = false;
+            hours.Visible = false;
             dtpDate.MinDate = new DateTime(2017, 12, 1);
             dtpDate.MaxDate = DateTime.Today;
            
@@ -144,7 +145,7 @@ namespace MaterialSkinExample
            
             string currentDate = DateTime.Now.ToString("dd-MMM-yyyy");
             string work = txtWork.Text;
-            string updateQuery = "UPDATE mydetails SET work = CONCAT(work, ', " + work + "') WHERE date= '" + currentDate + "'";
+            string updateQuery = "UPDATE mydetails SET work = CONCAT(work, '," + work + "') WHERE date= '" + currentDate + "'";
             string insertQuery = "UPDATE mydetails SET work = '" + work + "' WHERE date= '" + currentDate + "'"; 
             string checkQuery = "SELECT work from mydetails where date = '" + currentDate + "'";
 
@@ -330,9 +331,9 @@ namespace MaterialSkinExample
 
         private void displayWork()
         {
-            materialListView2.Items.Clear();
-
+            string[] strArr = null;
             string key = dateTimePicker1.Text;
+            char[] splitchar = {','};
             
 
             string query = "SELECT * from mydetails where date = '" + key + "'";
@@ -352,14 +353,31 @@ namespace MaterialSkinExample
                     searchlabel3.Visible = true;
                     startTime.Visible = true;
                     endTime.Visible = true;
-                    materialListView2.Visible = true;
+                    searchlabel4.Visible = true;
+                    hours.Visible = true;
+                    lblwork.Text = "";
 
-                    var item = new ListViewItem();
-                    startTime.Text = reader["start"].ToString();  // 2nd column text
-                    item.SubItems.Add(reader["work"].ToString());  // 3nd column text
+                    startTime.Text = (reader["start"].ToString());
                     tbedit.Text = reader["work"].ToString();
                     endTime.Text = reader["end"].ToString();
-                    materialListView2.Items.Add(item);
+
+                    DateTime fromTime = Convert.ToDateTime(reader["start"].ToString());
+                    DateTime toTime = Convert.ToDateTime(reader["end"].ToString());
+
+                    TimeSpan result = toTime - fromTime;
+                    int hour = result.Hours;
+                    int minutes = result.Minutes;
+
+                    hours.Text = " "+hour+" Hr "+minutes+ " Min";
+
+                    string str = reader["work"].ToString();
+
+                    strArr = str.Split(splitchar);
+
+                    for (int count = 0; count <= strArr.Length - 1; count++)
+                    {
+                        lblwork.Text += + count+1 +". "+strArr[count]+"\n";
+                    }
                 }
                 else
                 {
@@ -369,7 +387,9 @@ namespace MaterialSkinExample
                     searchlabel3.Visible = false;
                     startTime.Visible = false;
                     endTime.Visible = false;
-                    materialListView2.Visible = false;
+                    searchlabel4.Visible = false;
+                    hours.Visible = false;
+
                     status.Text = "No Data found...";
                     clearStatus();
                 }
@@ -421,6 +441,7 @@ namespace MaterialSkinExample
 
         private void edit_Click(object sender, EventArgs e)
         {
+            lblwork.Visible = false;
             tbedit.Visible = true;
             tbedit.BringToFront();
             edit.Visible = false;
@@ -431,6 +452,7 @@ namespace MaterialSkinExample
 
         private void cancel_Click(object sender, EventArgs e)
         {
+            lblwork.Visible = true;
             tbedit.Visible = false;
             edit.Visible = true;
             ok.Visible = false;
@@ -439,6 +461,7 @@ namespace MaterialSkinExample
 
         private void ok_Click(object sender, EventArgs e)
         {
+            lblwork.Visible = true;
             string currentDate = dateTimePicker1.Text;
             string work = tbedit.Text;
             string insertQuery = "UPDATE mydetails SET work = '" + work + "' WHERE date= '" + currentDate + "'";
@@ -469,7 +492,5 @@ namespace MaterialSkinExample
                 displayWork();
             }
         }
-
-       
     }
 }
